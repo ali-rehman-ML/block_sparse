@@ -1,12 +1,6 @@
 # Block Sparse Matrix Multiplication for ARM CPUs
 
 <p align="center">
-    <a href="https://pypi.python.org/pypi/uv">
-        <img src="https://img.shields.io/pypi/pyversions/uv.svg" alt="Supported Python Versions">
-    </a>
-</p>
-
-<p align="center">
     <img src="images/speed_up.png" alt="Speedup Plot" width="480">
 </p>
 
@@ -26,20 +20,16 @@
 - 64-bit ARM CPU
 
 ### Installing via pip
-Pre-built wheels are provided for Python 3.8, 3.9, and 3.10. Install the package using:
+Pre-built wheels are provided for Python 3.8, 3.9, and 3.10.
 
-```bash
-pip install block_sparse
-```
-
-### Building from Source
+### Installing from Source Wheels
 To build from source, clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/yourusername/block_sparse.git
 cd block_sparse
 pip install -r requirements.txt
-pip install .
+pip install wheels/block_sparse-0.1.0-cp310-cp310-linux_aarch64.whl # chosse from avaialble wheels 
 ```
 
 ## Usage
