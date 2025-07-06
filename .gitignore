@@ -1,4 +1,4 @@
 __pycache__
-src
+src/
 main.cpp
 test_binding.py
