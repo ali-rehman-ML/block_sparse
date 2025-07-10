@@ -1,8 +1,8 @@
 # Block Sparse Matrix Multiplication for ARM CPUs
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-    <img src="images/speedup.png" alt="Speedup Plot" style="height: 170px; object-fit: contain;">
-    <img src="images/comparison.png" alt="New Image" style="height: 170px; object-fit: contain;">
+    <img src="images/speedup.png" alt="Speedup Plot" style="height: 200px; object-fit: contain;">
+    <img src="images/comparison.png" alt="New Image" style="height: 200px; object-fit: contain;">
 </div>
 
 ## Features
