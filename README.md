@@ -1,8 +1,8 @@
 # Block Sparse Matrix Multiplication for ARM CPUs
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-    <img src="images/speedup.png" alt="Speedup Plot" style="height: 300px; object-fit: contain;">
-    <img src="images/comparison.png" alt="New Image" style="height: 300px; object-fit: contain;">
+    <img src="images/speedup.png" alt="Speedup Plot" style="height: 170px; object-fit: contain;">
+    <img src="images/comparison.png" alt="New Image" style="height: 170px; object-fit: contain;">
 </div>
 
 ## Features
@@ -11,9 +11,10 @@
 - Demonstrates speedup at low sparsity levels starting from 10%, unlike other libraries that require high sparsity (>80%) for performance gains
 - Multi-threaded implementation for enhanced performance across a wide range of sparsity ratios (10% and above).
 - Support for configurable block sizes and efficient matrix format conversion (e.g., row-major to block-major).
+## Source Code 
+- Developed ARM NEON ISA assembly kernels for enhanced control and speedup. The library is use only using python wheels. If you need source code for kernels , please submit request at alee.rehmaann@gmail.com
 
 ## Future Development
-- Developed ARM NEON ISA assembly kernels for enhanced control and speedup (not currently included in Python wheels).
 - Currently, the library is available only via Python wheels. Future releases will include C++ library files for broader usage.
 - Based on community requests, we plan to add block-sparse support for Intel x86 CPUs with Intel AVX and SSE instructions.
 
