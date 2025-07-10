@@ -1,16 +1,21 @@
 # Block Sparse Matrix Multiplication for ARM CPUs
 
-<p align="center">
-    <img src="images/speed_up.png" alt="Speedup Plot" width="480">
-</p>
-
+<div style="display: flex; justify-content: space-between; align-items: center;">
+    <img src="images/speedup.png" alt="Speedup Plot" style="height: 300px; object-fit: contain;">
+    <img src="images/comparison.png" alt="New Image" style="height: 300px; object-fit: contain;">
+</div>
 
 ## Features
-- Optimized block sparse matrix multiplication for 64-bit ARM architectures.
-- Python bindings for seamless integration with NumPy.
-- Support for configurable block sizes and sparsity ratios.
-- Conversion between different matrix formats (e.g., row-major to block-major).
-- Benchmarking utilities to compare performance against standard NumPy operations.
+- Optimized block sparse matrix multiplication for 64-bit ARM CPUs, with kernels designed for custom block row-major and block column-major formats, outperforming traditional sparse block row/column formats.
+- Compatible with NumPy, enabling seamless integration.
+- Demonstrates speedup at low sparsity levels starting from 10%, unlike other libraries that require high sparsity (>80%) for performance gains
+- Multi-threaded implementation for enhanced performance across a wide range of sparsity ratios (10% and above).
+- Support for configurable block sizes and efficient matrix format conversion (e.g., row-major to block-major).
+
+## Future Development
+- Developed ARM NEON ISA assembly kernels for enhanced control and speedup (not currently included in Python wheels).
+- Currently, the library is available only via Python wheels. Future releases will include C++ library files for broader usage.
+- Based on community requests, we plan to add block-sparse support for Intel x86 CPUs with Intel AVX and SSE instructions.
 
 ## Installation
 
@@ -29,7 +34,7 @@ To build from source, clone the repository and install dependencies:
 git clone https://github.com/yourusername/block_sparse.git
 cd block_sparse
 pip install -r requirements.txt
-pip install wheels/block_sparse-0.1.0-cp310-cp310-linux_aarch64.whl # chosse from avaialble wheels 
+pip install wheels/block_sparse-0.1.0-cp310-cp310-linux_aarch64.whl # choose from available wheels 
 ```
 
 ## Usage
@@ -49,7 +54,7 @@ B = np.random.uniform(0, 1, (N, K)).astype(np.float32)
 # Apply block sparsity to B
 B = make_block_sparse_matrix(B, block_size_row=4, block_size_col=4, sparsity_ratio=0.5)
 
-#  Create block_sparse tensors
+# Create block_sparse tensors
 A_tensor = block_sparse.create_tensor(
     np_array=A,
     is_sparse=False,
@@ -106,6 +111,3 @@ Contributions are welcome! Please submit a pull request or open an issue to disc
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-For questions or support, please open an issue on GitHub or contact [your contact information].
